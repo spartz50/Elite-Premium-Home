@@ -15,24 +15,14 @@ export default defineConfig({
       "@": path.resolve(import.meta.dirname, "src"),
       "@shared": path.resolve(import.meta.dirname, "shared"),
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
-      "@images": path.resolve(import.meta.dirname, "images"),
     },
   },
-  publicDir: false,
   envDir: path.resolve(import.meta.dirname),
   root: path.resolve(import.meta.dirname),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        main: path.resolve(import.meta.dirname, "index.html"),
-      },
-    },
-    copyPublicDir: false,
-    assetsInclude: ['**/*.webp', '**/*.png', '**/*.jpg', '**/*.jpeg'],
   },
-  assetsInclude: ['**/*.webp'],
   server: {
     port: 3000,
     strictPort: false,
@@ -52,3 +42,37 @@ export default defineConfig({
     },
   },
 });
+```
+
+4. **Commit**
+
+---
+
+## 📂 **Step 2: Move images to the PUBLIC folder (THE RIGHT WAY)**
+
+The images MUST be in a `public/` folder for Vite to include them.
+
+### **Here's what to do:**
+
+1. **Go to your repo root:** `https://github.com/spartz50/Elite-Premium-Home`
+
+2. **Create a `public` folder:**
+   - Click "Add file" → "Create new file"
+   - Type: `public/images/projects/.gitkeep`
+   - Click "Commit new file"
+
+3. **Upload your images to the public folder:**
+   - Go into the `public/images/projects/` folder you just created
+   - Click "Add file" → "Upload files"
+   - **Drag and drop ALL your .webp images**
+   - Commit
+
+4. **Your structure should look like:**
+```
+public/
+  images/
+    projects/
+      logo.webp
+      jolly_bathroom_2.webp
+      justice_kitchen_main.webp
+      (all other images)
